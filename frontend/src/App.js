@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import Excel from "./pages/Excel/Excel";
+import MainHome from "./pages/MainHome/MainHome";
+
 function App() {
   return (
     <BrowserRouter>
@@ -11,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path= "/excel" element= {<Excel/>} />
+        <Route path= "/MainHome" element= {<MainHome/>} />
       </Routes>
     </BrowserRouter>
   );
