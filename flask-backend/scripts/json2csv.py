@@ -26,7 +26,6 @@ def json2csv(jsondata):
 
     data_file.close()
 
-    return data_file
 
 
 if __name__ == "__main__":
