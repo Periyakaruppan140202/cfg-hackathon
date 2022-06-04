@@ -10,7 +10,7 @@ var dataPoint;
 			theme: "dark2",
 			animationEnabled: true,
 			title:{
-				text: "Recruitment Analysis - July 2016"
+				text: "Recruitment Analysis"
 			},
 			data: [{
 				type: "funnel",

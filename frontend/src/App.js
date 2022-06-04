@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Excel from "./pages/Excel/Excel";
 import Chart2 from "./pages/Chart/chart2";
 import Chart4 from "./pages/Chart/chart4";
+import Chart3 from "./pages/Chart/chart3";
 import Chart from "./pages/Chart/chart";
 import Form from "./pages/Form/form";
 import FellowAnalysis from "./pages/FellowAnalysis/Analysis";
