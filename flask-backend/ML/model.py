@@ -1,12 +1,14 @@
 import pickle
 import numpy as np
 import sklearn.cluster
+
+
 def predict(X):
     X = np.array(X) # X is 2D array
-    kmeans_model = pickle.load(open("model.pkl", "rb"))
-    y_kmeans = kmeans_model.predict(X)
-    c1 = [X[y_kmeans == 0, 0],X[y_kmeans == 0, 1]] # cluster 1 co-ordinates
-    c2 = [X[y_kmeans == 1, 0],X[y_kmeans == 1, 1]] # cluster 2 co-ordinates
+    kmeans_model = pickle.load(open("./ML/model.pkl", "rb"))
+    y_kmeans = kmeans_model.fit_predict(X)
+    c1 = [X[y_kmeans == 0, 0].tolist(),X[y_kmeans == 0, 1].tolist()] # cluster 1 co-ordinates
+    c2 = [X[y_kmeans == 1, 0].tolist(),X[y_kmeans == 1, 1].tolist()] # cluster 2 co-ordinates
     return c1,c2
 
 if __name__ == "__main__":
