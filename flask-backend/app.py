@@ -2,6 +2,7 @@ from flask import Flask,request,jsonify
 from flask_cors import CORS
 import hashlib
 from ML.model import predict
+from Excel_Processor.processing import Excel_Processor
 
 app = Flask(__name__)
 CORS(app)
@@ -29,7 +30,17 @@ def uidGenerate():
     hashString = aadhar + name
     UID = {"UID":hashlib.sha256(hashString.encode()).hexdigest()}
     return jsonify(UID),200
-    
+
+@app.route('/excel/process',methods =['POST'])
+def Excel_Process():
+    data = request.get_json(force=True)
+    dataset = data['dataset']
+    res = Excel_Processor(dataset)
+    return jsonify(res),200
+
+
+
+
 
 
 if(__name__) == "__main__":
