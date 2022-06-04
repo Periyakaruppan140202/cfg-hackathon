@@ -18,6 +18,8 @@ const Excel = () => {
     <>
       <NavBars />
       <div className="A">
+        You can upload your excel sheet here and continue your Service easily
+        with Add Form and Data Analysis.
         <input className="input" type="file" onChange={onChange} />
       </div>
     </>

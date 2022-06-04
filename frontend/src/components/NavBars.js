@@ -1,12 +1,18 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import logo from "../images/logo.jpg";
+import "../App.css";
 const NavBars = () => {
   return (
     //Create Navbar
-    <nav class="navbar navbar-expand-lg navbar-light bg-light pl-2">
-      <a class="navbar-brand p-2" href="#">
-        Navbar
+    <nav
+      className="navbar navbar-expand-lg navbar-light pl-2"
+      style={{ backgroundColor: "#F3F2EF" }}
+    >
+      <p className="p-2"></p>
+      <a className="navbar-brand" href="#">
+        <img src={logo} alt="anubhuti" height="40px" />
       </a>
       <button
         class="navbar-toggler"
