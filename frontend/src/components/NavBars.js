@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const NavBars = () => {
   return (
     //Create Navbar
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light pl-2">
+      <a class="navbar-brand p-2" href="#">
         Navbar
       </a>
       <button
@@ -22,23 +22,18 @@ const NavBars = () => {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">
-              Home <span class="sr-only">(current)</span>
+            <a class="nav-link" href="/">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/fellow">
+              Fellow
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              Features
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Pricing
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">
-              Disabled
+              Data Analysis
             </a>
           </li>
         </ul>

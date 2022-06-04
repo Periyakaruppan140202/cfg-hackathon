@@ -2,6 +2,7 @@ import React from "react";
 import "./Analysis.css";
 import CanvasJSReact from "../Chart/canvasjs.react";
 import { Card, Button, Col, Container, Row } from "react-bootstrap";
+import NavBars from "../../components/NavBars";
 
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
@@ -220,7 +221,7 @@ function Analysis(props) {
   };
   return (
     <div>
-      {" "}
+      <NavBars />{" "}
       <div>
         <h1 className="heading">Detail Analysis For Amisha, Rajput</h1>
         <div>

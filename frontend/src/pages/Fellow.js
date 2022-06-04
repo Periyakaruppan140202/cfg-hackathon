@@ -36,7 +36,7 @@ const Fellow = () => {
                   margin: "50px auto 10px",
                   textAlign: "center",
                 }}
-                className="bg-dark text-white cards"
+                className="bg-light text-dark cards"
               >
                 <Card.Body>
                   <Card.Title>{item.FellowName}</Card.Title>
@@ -55,7 +55,7 @@ const Fellow = () => {
                       item.Number_of_the_Students_attended_classes_regularly_More_than_80_attendance
                     }
                   </Card.Text>
-                  <Card.Link href="#">Detail Profile</Card.Link>
+                  <Card.Link href="/fellowanalysis">Detail Profile</Card.Link>
                 </Card.Body>
               </Card>
             );
