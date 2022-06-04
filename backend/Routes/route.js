@@ -1,5 +1,10 @@
-//Create Login Route
 const router = require("express").Router();
+const uploadController = require("../Controllers/upload");
+const upload = require("../Middleware/upload");
+
+router.post("/uploadExcel", upload.single("excel"), uploadController.upload);
+//Create Login Route
+
 const jwt = require("jsonwebtoken");
 
 const users = [
