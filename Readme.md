@@ -34,6 +34,7 @@ node app
 
 ### _Mentors_
 > Alok Mishra
+> Nawed
 
 ### _Developers_
  > Chirag
