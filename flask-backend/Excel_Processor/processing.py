@@ -28,3 +28,14 @@ def Month_Checker(dataset):
   print(month_error)
 
 Month_Checker(dataset)
+
+def Name_Checker(dataset):
+  columns = [1,2,22]
+  name_error = []
+  for i in range(len(dataset)):
+    for j in columns:
+      if(type(dataset.iloc[i,j])!=str):
+        name_error.append(f"The row is {i+1} and col is {j+1} \n")
+  print(name_error)
+
+Name_Checker(dataset)
