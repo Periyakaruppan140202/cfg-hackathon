@@ -13,5 +13,18 @@ class Blockchain:
 
         self.chain.append(self.genesisBlock)
         
+    def addBlock(self,data,timestamp):
+        self.prevHash = self.chain[-1]["Hash"]
+        if(self.validBlock(self.prevHash)):
+            
+            self.height+=1
+            self.size = sys.getsizeof(str(timestamp)+str(self.height)+str(data)+str(self.prevHash))
+            hashString = str(timestamp)+str(self.size)+str(data)+str(self.height)+str(self.prevHash)
+            self.currentHash  = hashlib.sha256(hashString.encode()).hexdigest()
+            self.block={"TimeStamp":timestamp,"Hash":self.currentHash,"PrevHash":self.prevHash,"Height":self.height,"Size":self.size,"Data":data}
+            self.chain.append(self.block)
+        else:
+            print("Previous hash not matched. Unable to add further blocks !!!")
+    
 
    
