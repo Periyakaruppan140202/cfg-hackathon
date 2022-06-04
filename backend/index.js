@@ -7,7 +7,8 @@ const bodyParser = require("body-parser");
 const rateLimit = require("express-rate-limit");
 var morgan = require("morgan");
 const helmet = require("helmet");
-
+const router = require("./Routes/route");
+const jwt = require("jsonwebtoken");
 const path = require("path");
 
 Dbconnect();
@@ -20,6 +21,7 @@ const limiter = rateLimit({
 });
 
 app.use(express.json());
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(
@@ -37,7 +39,7 @@ app.use("/upload", express.static(path.join(__dirname, "Uploads")));
 app.get("/", (req, res) => {
   res.send("Welcome to CFG 2022");
 });
-
+app.use("/", router);
 app.listen(process.env.PORT || 5600, () => {
   console.log("server started at 5600");
 });
