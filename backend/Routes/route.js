@@ -1,9 +1,13 @@
 const router = require("express").Router();
 const uploadController = require("../Controllers/upload");
+const ChartController = require("../Controllers/chart");
 const upload = require("../Middleware/upload");
 const Fellow = require("../Models/fellow");
-router.post("/uploadExcel", upload.single("excel"), uploadController.upload);
 const ChartRoute = require("../Controllers/chart-route");
+
+router.post("/uploadExcel", upload.single("excel"), uploadController.upload);
+router.get("/pieChartParents", ChartController.piechart);
+
 //Create Login Route
 const jwt = require("jsonwebtoken");
 

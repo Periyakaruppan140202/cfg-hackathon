@@ -2,8 +2,20 @@ const Fellow = require("../Models/fellow");
 class ChartController {
   async piechart(req, res) {
     try {
+      const parentsVisited = [];
+      const parentsTalked = [];
       let fellows = await Fellow.find({});
-      res.json(fellows);
+      fellows.forEach((fellow) => {
+        parentsVisited.push(
+          fellow.Number_of_parents_visited_Anubhuti_learning_centers
+        );
+
+        parentsTalked.push(
+          fellow.Number_of_parents_had_one_on_one_conversations_with_fellows_during_the_field_visit
+        );
+      });
+      console.log(fellows);
+      res.json({ parentsVisited, parentsTalked });
     } catch (err) {
       console.log(err);
       res.json({
@@ -27,4 +39,4 @@ class ChartController {
   }
 }
 
-module.exports = new UploadController();
+module.exports = new ChartController();
