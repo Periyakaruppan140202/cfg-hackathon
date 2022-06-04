@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from scripts.json2csv import json2csv
 
 def NaN_Checker(dataset):
   nan_error = []
@@ -17,6 +17,7 @@ def NaN_Checker(dataset):
     return -1,str(e) + '[Error During NaN Checker]',nan_error
       
 def Month_Checker(dataset):
+    
     month_error = []
     months = ["january","february","march","april","may","june","july","august","september","october","november","december"]
     try:        
@@ -58,7 +59,9 @@ def Negative_Checker(dataset):
         
         return -1,str(e) + '[Error During Negative Checker]',dataset,negative_errors
 
-def Excel_Processor(dataset):
+def Excel_Processor(jsondata):
+    json2csv(jsondata)
+    dataset = pd.read_csv('./Excel_Processor/test_fine.csv')
     res = {}
     res['NaN_Errors'] = NaN_Checker(dataset)
     res['Month_Errors'] = Month_Checker(dataset)
@@ -69,5 +72,5 @@ def Excel_Processor(dataset):
 
 
 
-dataset = pd.read_csv("test_error.csv")
-print(dataset)
+# dataset = pd.read_csv("test_error.csv")
+# print(dataset)

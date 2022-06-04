@@ -39,7 +39,7 @@ function Login(){
              
               if (response2.status === 200 ) {
                 console.log(response2)
-                // localStorage.setItem('token', response2.data.token);
+                 localStorage.setItem('token', response2.data.token);
                
                 // history.push('/')
               }
