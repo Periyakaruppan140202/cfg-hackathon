@@ -17,10 +17,16 @@ const Excel = () => {
   return (
     <>
       <NavBars />
+      <div className="line1">
+        Want to get some useful insights from EXCEL.??
+      </div>
+      <div className="line2">
+        Upload the Excel sheet with fellow details here:
+      </div>
+
       <div className="A">
-        You can upload your excel sheet here and continue your Service easily
-        with Add Form and Data Analysis.
-        <input className="input" type="file" onChange={onChange} />
+        <img src="/images/excel.jpg" alt="excel" />
+        <input className="inputUpload input" type="file" onChange={onChange} />
       </div>
     </>
   );
