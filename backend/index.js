@@ -7,11 +7,8 @@ const bodyParser = require("body-parser");
 const rateLimit = require("express-rate-limit");
 var morgan = require("morgan");
 const helmet = require("helmet");
-<<<<<<< HEAD
-=======
 const router = require("./Routes/route");
 const jwt = require("jsonwebtoken");
->>>>>>> 2fb2ed45f109bb4ba6f691762536e3033ce48b98
 const path = require("path");
 const UploadRoute = require("./Routes/route");
 
