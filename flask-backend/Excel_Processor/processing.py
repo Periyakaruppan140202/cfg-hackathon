@@ -2,8 +2,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-dataset = pd.read_csv("./Excel_Processor/test_error.csv")
-
 
 def NaN_Checker(dataset):
   nan_error = []
@@ -71,4 +69,5 @@ def Excel_Processor(dataset):
 
 
 
-
+dataset = pd.read_csv("test_error.csv")
+print(dataset)
