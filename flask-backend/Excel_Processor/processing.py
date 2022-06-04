@@ -18,3 +18,13 @@ def NaN_Checker(dataset):
 
 
 NaN_Checker(dataset)
+
+def Month_Checker(dataset):
+  months = ["january","february","march","april","may","june","july","august","september","october","november","december"]
+  month_error = []
+  for i in range(len(dataset)):
+    if(str(dataset.iloc[i,0]).lower() not in months):
+      month_error.append(f"The row is {i+1} and col is 1 \n")
+  print(month_error)
+
+Month_Checker(dataset)
