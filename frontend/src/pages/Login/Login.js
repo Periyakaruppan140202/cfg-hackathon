@@ -7,13 +7,10 @@ import { getEndPoint, postEndPoint } from "../../request/request"
 // import { useDispatch } from 'react-redux'
 // import { setToken, setAuth } from '../../store/authSlice'
 
-
-
-
-
 function Login(){
 
     // const dispatch = useDispatch();
+    const [id, setId] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
@@ -162,6 +159,10 @@ async function submitRegister(){
                             <div className="title">Signup</div>
                             <form action="#">
                                 <div className="input-boxes">
+                                <div className="input-box">
+                                        <i className="pa pa-id"></i>
+                                        <input type="text" value={id} onInput={(event) => { setId(event.target.value); }}  placeholder="Enter your Employee ID"  required/>
+                                    </div>
                                     <div className="input-box">
                                         <i className="fa fa-user"></i>
                                         <input type="text" value={name} onInput={(event) => { setName(event.target.value); }}  placeholder="Enter your name"  required/>
@@ -175,8 +176,8 @@ async function submitRegister(){
                                         <input type="password" value={password} onInput={(event) => { setPassword(event.target.value); }} placeholder="Enter your password" required />
                                     </div>
                                     <div className="registrationButtons">
-                                        <div style={{ cursor:"pointer", textAlign:"center" ,backgroundColor : isStudent ? '#7d2ae8' :'rgb(239, 239, 239)' ,marginTop: "2%", border: "none", outline: "none", borderRadius: "5px", fontWeight: "bolder", width: "14rem" }} onClick={() => { setIsStudent(true)}}  ><span className="bn31span" style={{ color: isStudent ? "#fff" : "#7d2ae8",borderRadius: "5px" }}>Student</span></div>
-                                        <div style={{ cursor:"pointer", textAlign:"center" , backgroundColor : !isStudent ? '#7d2ae8' :'rgb(239, 239, 239)',marginTop: "2%", border: "none", outline: "none", borderRadius: "5px", fontWeight: "bolder", width: "18rem"}}  onClick={() => { setIsStudent(false)}} ><span className="bn31span" style={{ color: !isStudent ? "#fff" : "#7d2ae8",borderRadius: "5px" }}>Teacher</span></div>
+                                        <div style={{ cursor:"pointer", textAlign:"center" ,backgroundColor : isStudent ? '#7d2ae8' :'rgb(239, 239, 239)' ,marginTop: "2%", border: "none", outline: "none", borderRadius: "5px", fontWeight: "bolder", width: "14rem" }} onClick={() => { setIsStudent(true)}}  ><span className="bn31span" style={{ color: isStudent ? "#fff" : "#7d2ae8",borderRadius: "5px" }}>Fellow</span></div>
+                                        <div style={{ cursor:"pointer", textAlign:"center" , backgroundColor : !isStudent ? '#7d2ae8' :'rgb(239, 239, 239)',marginTop: "2%", border: "none", outline: "none", borderRadius: "5px", fontWeight: "bolder", width: "18rem"}}  onClick={() => { setIsStudent(false)}} ><span className="bn31span" style={{ color: !isStudent ? "#fff" : "#7d2ae8",borderRadius: "5px" }}>Associate</span></div>
                                     </div>
                                     <div className="button input-box">
                                         <div  onClick={() => { submitRegister() }}>Submit</div>
