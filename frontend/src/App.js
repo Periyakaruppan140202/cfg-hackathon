@@ -5,6 +5,7 @@ import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import Excel from "./pages/Excel/Excel";
 import MainHome from "./pages/MainHome/MainHome";
+import Chart from "./pages/Chart/chart";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path= "/excel" element= {<Excel/>} />
         <Route path= "/MainHome" element= {<MainHome/>} />
+        <Route path= "/chart" element= {<Chart/>} />
+        
       </Routes>
     </BrowserRouter>
   );
