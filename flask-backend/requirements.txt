@@ -3,3 +3,5 @@ flask-cors
 sklearn
 pickle-mixin
 numpy
+pandas
+matplotlib
