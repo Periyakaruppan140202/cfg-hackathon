@@ -4,27 +4,65 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 
 dataset = pd.read_csv("./Excel_Processor/test_error.csv")
+res = {}
 def NaN_Checker(dataset):
-  row = 0
-  col = 0
   nan_error = []
-  for i in range(len(dataset)):
-    for j in range(23):
-      if(str(dataset.iloc[i,j])=="nan"):
-        row = i
-        col = j
-        nan_error.append(f'The row is {row+1} and col is {col+1} \n')
-  print(nan_error)
+  try:
+    for i in range(len(dataset)):
+        for j in range(23):
+            if(str(dataset.iloc[i,j])=="nan"):
+                nan_error.append(f'The row is {i+1} and col is {j+1} \n')
+                
+    res["NaN_Errors"] = nan_error
+
+  except Exception as e:
+    return -1,str(e) + '[Error During NaN Checker]',dataset
+      
 
 
 NaN_Checker(dataset)
 
 def Month_Checker(dataset):
-  months = ["january","february","march","april","may","june","july","august","september","october","november","december"]
-  month_error = []
-  for i in range(len(dataset)):
-    if(str(dataset.iloc[i,0]).lower() not in months):
-      month_error.append(f"The row is {i+1} and col is 1 \n")
-  print(month_error)
+    month_error = []
+    months = ["january","february","march","april","may","june","july","august","september","october","november","december"]
+    try:        
+        for i in range(len(dataset)):
+            if(str(dataset.iloc[i,0]).lower() not in months):
+                month_error.append(f"The row is {i+1} and col is 1 \n")
+        res['Month_Errors'] = month_error
+    
+    except Exception as e:
+        return -1,str(e) + '[Error During Month Checker]',dataset
 
 Month_Checker(dataset)
+
+def Name_Checker(dataset):
+    name_error = []
+    columns = [1,2,22]
+    try:
+        for i in range(len(dataset)):
+            for j in columns:
+                if(type(dataset.iloc[i,j])!=str):
+                    name_error.append(f"The row is {i+1} and col is {j+1} \n")
+        
+        res["Name_Errors"]=name_error
+
+    except Exception as e:
+        return -1,str(e) + '[Error During Name Checker]',dataset
+
+Name_Checker(dataset)
+
+def Negative_Checker(dataset):
+    negative_errors = []
+    try:
+        for i in range(len(dataset)):
+            for j in range(3,22):
+                if(type(dataset.iloc[i,j])!=str and dataset.iloc[i,j]<0):
+                    negative_errors.append(f"The row is {i+1} and col is {j+1} \n")
+        
+        res["Negative_Errors"]=negative_errors
+
+    except Exception as e:
+        return -1,str(e) + '[Error During Negative Checker]',dataset
+
+Negative_Checker(dataset)
