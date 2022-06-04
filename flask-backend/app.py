@@ -3,6 +3,7 @@ from flask_cors import CORS
 import hashlib
 from ML.model import predict
 from Excel_Processor.processing import Excel_Processor
+from scripts.json2csv import json2csv
 
 app = Flask(__name__)
 CORS(app)
@@ -35,12 +36,9 @@ def uidGenerate():
 def Excel_Process():
     data = request.get_json(force=True)
     dataset = data['dataset']
+    dataset = json2csv(dataset)
     res = Excel_Processor(dataset)
     return jsonify(res),200
-
-
-
-
 
 
 if(__name__) == "__main__":
