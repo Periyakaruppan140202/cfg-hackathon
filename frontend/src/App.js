@@ -5,9 +5,8 @@ import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import Excel from "./pages/Excel/Excel";
 import Chart2 from "./pages/Chart/chart2";
-
 import Chart from "./pages/Chart/chart";
-
+import Form from "./pages/Form/Form"
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +16,7 @@ function App() {
         <Route path= "/excel" element= {<Excel/>} />
         <Route path= "/chart" element= {<Chart/>} />
         <Route path= "/chart2" element= {<Chart2/>} />
+        <Route path="/form" element = {<Form/>}/>
       </Routes>
     </BrowserRouter>
   );
