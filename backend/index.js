@@ -1,0 +1,43 @@
+var express = require("express");
+var app = express();
+let cookieParser = require("cookie-parser");
+const Dbconnect = require("./database");
+let cors = require("cors");
+const bodyParser = require("body-parser");
+const rateLimit = require("express-rate-limit");
+var morgan = require("morgan");
+const helmet = require("helmet");
+
+const path = require("path");
+
+Dbconnect();
+
+const limiter = rateLimit({
+  windowMs: (15 * 60 * 1000) / 3, // 15 minutes
+  max: 300, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+});
+
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+app.use(cors());
+app.use(limiter);
+app.use(morgan("combined"));
+app.use(helmet());
+
+app.use("/upload", express.static(path.join(__dirname, "Uploads")));
+
+app.get("/", (req, res) => {
+  res.send("Welcome to CFG 2022");
+});
+
+app.listen(process.env.PORT || 5600, () => {
+  console.log("server started at 5600");
+});
