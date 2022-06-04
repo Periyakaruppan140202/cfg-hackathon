@@ -73,7 +73,7 @@ async function submitRegister(e){
 
     return (
         <body className='fellow'>
-        <form className="fellowForm" action="POST">
+        <form className="fellowForm">
         <h1>Monthly Review</h1>
 
         <label>
