@@ -1,13 +1,14 @@
 //Create Login Route
 const router = require("express").Router();
+const jwt = require("jsonwebtoken");
 
 const users = [
   {
-    username: "admin",
+    email: "admin",
     password: "admin",
   },
   {
-    username: "user",
+    email: "user",
     password: "user",
   },
 ];
@@ -15,7 +16,8 @@ const users = [
 router.post("/login", async (req, res) => {
   try {
     console.log(req.body);
-    const user = users.find((u) => u.username == req.body.username);
+    const user = users.find((u) => String(u.email) == String(req.body.email));
+    console.log(user);
     if (!user) {
       return res.status(400).send("User not found");
     }
@@ -27,7 +29,7 @@ router.post("/login", async (req, res) => {
     // if (!isMatch) {
     //   return res.status(400).send("Invalid password");
     // }
-    const token = jwt.sign({ user }, "secretkey", { expiresIn: "10s" });
+    const token = jwt.sign({ user }, "secretkey", { expiresIn: "3d" });
     console.log(token);
     res.json({
       token,

@@ -8,7 +8,7 @@ const rateLimit = require("express-rate-limit");
 var morgan = require("morgan");
 const helmet = require("helmet");
 const router = require("./Routes/route");
-
+const jwt = require("jsonwebtoken");
 const path = require("path");
 
 Dbconnect();
