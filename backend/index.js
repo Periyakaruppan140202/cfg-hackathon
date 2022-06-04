@@ -7,8 +7,8 @@ const bodyParser = require("body-parser");
 const rateLimit = require("express-rate-limit");
 var morgan = require("morgan");
 const helmet = require("helmet");
-
 const path = require("path");
+const UploadRoute = require("./Routes/route");
 
 Dbconnect();
 
@@ -33,7 +33,7 @@ app.use(morgan("combined"));
 app.use(helmet());
 
 app.use("/upload", express.static(path.join(__dirname, "Uploads")));
-
+app.use("/", UploadRoute);
 app.get("/", (req, res) => {
   res.send("Welcome to CFG 2022");
 });
