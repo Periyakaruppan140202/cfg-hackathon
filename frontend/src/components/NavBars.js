@@ -36,6 +36,16 @@ const NavBars = () => {
               Data Analysis
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/form">
+              Add Form
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/upload">
+              Upload Excel Sheet
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

@@ -26,6 +26,8 @@ function App() {
         <Route path="/form" element={<Form />} />
         <Route path="/chart4" element={<Chart4 />} />
         <Route path="/fellowanalysis" element={<FellowAnalysis />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/upload" element={<Excel />} />
       </Routes>
     </BrowserRouter>
   );
