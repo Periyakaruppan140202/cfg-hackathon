@@ -26,5 +26,12 @@ class Blockchain:
         else:
             print("Previous hash not matched. Unable to add further blocks !!!")
     
+    def getLastBlock(self):
+        return(self.chain[-1])
 
+    def validBlock(self,prevHash):
+        return self.chain[-1]["Hash"] == prevHash
+    
+    def viewChain(self):
+        return self.chain
    
