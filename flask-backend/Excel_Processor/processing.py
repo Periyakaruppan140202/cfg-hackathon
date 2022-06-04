@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 dataset = pd.read_csv("./Excel_Processor/test_error.csv")
-res = {}
+
 
 def NaN_Checker(dataset):
   nan_error = []
@@ -13,11 +13,10 @@ def NaN_Checker(dataset):
             if(str(dataset.iloc[i,j])=="nan"):
                 nan_error.append(f'The row is {i+1} and col is {j+1} \n')
    
-    res["NaN_Errors"] = nan_error
+    return nan_error
 
   except Exception as e:
-    res["NaN_Errors"] = nan_error
-    return -1,str(e) + '[Error During NaN Checker]'
+    return -1,str(e) + '[Error During NaN Checker]',nan_error
       
 def Month_Checker(dataset):
     month_error = []
@@ -27,11 +26,10 @@ def Month_Checker(dataset):
             if(str(dataset.iloc[i,0]).lower() not in months):
                 month_error.append(f"The row is {i+1} and col is 1 \n")
         
-        res['Month_Errors'] = month_error
+        return month_error
     
     except Exception as e:
-        res['Month_Errors'] = month_error
-        return -1,str(e) + '[Error During Month Checker]'
+        return -1,str(e) + '[Error During Month Checker]',month_error
 
 def Name_Checker(dataset):
     name_error = []
@@ -42,11 +40,11 @@ def Name_Checker(dataset):
                 if(type(dataset.iloc[i,j])!=str):
                     name_error.append(f"The row is {i+1} and col is {j+1} \n")
         
-        res["Name_Errors"]=name_error
+        return name_error
 
     except Exception as e:
-        res["Name_Errors"]=name_error
-        return -1,str(e) + '[Error During Name Checker]'
+        
+        return -1,str(e) + '[Error During Name Checker]',name_error
 
 def Negative_Checker(dataset):
     negative_errors = []
@@ -56,18 +54,18 @@ def Negative_Checker(dataset):
                 if(type(dataset.iloc[i,j])!=str and dataset.iloc[i,j]<0):
                     negative_errors.append(f"The row is {i+1} and col is {j+1} \n")
         
-        res["Negative_Errors"]=negative_errors
+        return negative_errors
 
     except Exception as e:
-        res["Negative_Errors"]=negative_errors
-        return -1,str(e) + '[Error During Negative Checker]',dataset
+        
+        return -1,str(e) + '[Error During Negative Checker]',dataset,negative_errors
 
 def Excel_Processor(dataset):
-
-    NaN_Checker(dataset)
-    Month_Checker(dataset)
-    Name_Checker(dataset)
-    Negative_Checker(dataset)
+    res = {}
+    res['NaN_Errors'] = NaN_Checker(dataset)
+    res['Month_Errors'] = Month_Checker(dataset)
+    res['Name_Errors'] = Name_Checker(dataset)
+    res['Negative_Errors'] = Negative_Checker(dataset)
 
     return res
 
