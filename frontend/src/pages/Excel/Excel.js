@@ -21,7 +21,9 @@ const Excel = () => {
           };
           return (
             <>
+            <div className="A">
               <input className="input" type="file" onChange={onChange} />
+            </div>
             </>
           );
     };

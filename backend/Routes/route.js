@@ -4,6 +4,7 @@ const ChartController = require("../Controllers/chart");
 const upload = require("../Middleware/upload");
 const Fellow = require("../Models/fellow");
 const ChartRoute = require("../Controllers/chart-route");
+const fellow = require("../Controllers/fellow");
 
 router.post("/uploadExcel", upload.single("excel"), uploadController.upload);
 router.get("/pieChartParentsData", ChartController.piechart);
@@ -11,7 +12,7 @@ router.get("/pieChartCenterData", ChartController.centerDataInsight);
 
 //Create Login Route
 const jwt = require("jsonwebtoken");
-
+router.use("/", fellow);
 router.use("/", ChartRoute);
 const users = [
   {
