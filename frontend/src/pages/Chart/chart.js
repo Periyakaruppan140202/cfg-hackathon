@@ -1,10 +1,15 @@
 import React from "react";
-import CanvasJSReact from "./canvasjs.react"
+import CanvasJSReact from "./canvasjs.react";
 
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 function chart(props) {
+  const fetchChart1 = async () => {
+    const res = await fetch("http://localhost:5600/chart1");
+    const data = await res.json();
+    console.log(data);
+  };
   const pieoptions = {
     exportEnabled: true,
     animationEnabled: true,
