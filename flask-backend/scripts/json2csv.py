@@ -2,10 +2,11 @@ import json
 import csv
 
 
-def json2csv(jsondata):
+def json2csv(data):
     # Opening JSON file and loading the data
     # into the variable data
-    data = json.load(jsondata)
+    # data = json.load(jsondata)
+    
 
     # now we will open a file for writing
     data_file = open('./Excel_Processor/test_fine.csv', 'w')
