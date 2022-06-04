@@ -9,6 +9,10 @@ import Fellow from "./pages/Fellow";
 import Chart from "./pages/Chart/chart";
 import NavBars from "./components/NavBars";
 
+import Chart4 from "./pages/Chart/chart4";
+import Chart3 from "./pages/Chart/chart3";
+import Form from "./pages/Form/Form";
+import FellowAnalysis from "./pages/FellowAnalysis/Analysis";
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +23,9 @@ function App() {
         <Route path="/chart" element={<Chart />} />
         <Route path="/chart2" element={<Chart2 />} />
         <Route path="/fellow" element={<Fellow />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/chart4" element={<Chart4 />} />
+        <Route path="/fellowanalysis" element={<FellowAnalysis />} />
       </Routes>
     </BrowserRouter>
   );

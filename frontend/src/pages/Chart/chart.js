@@ -14,7 +14,7 @@ function chart(props) {
     exportEnabled: true,
     animationEnabled: true,
     title: {
-      text: "Basic Column Chart",
+      text: "Month",
     },
     data: [
       {
