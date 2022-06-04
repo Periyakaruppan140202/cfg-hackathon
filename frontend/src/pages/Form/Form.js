@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getEndPoint, postEndPoint } from "../../request/request";
-import "./form.css";
+import "./Form.css";
 
 export default function App() {
   const [loading, setIsLoading] = React.useState(false);
