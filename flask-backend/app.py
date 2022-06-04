@@ -24,7 +24,7 @@ def cluster():
 @app.route('/uidgenerate', methods=['POST'])
 def uidGenerate():
     data = request.get_json(force=True)
-    aadhar = data['aadhar']
+    aadhar = str(data['aadhar'])
     name = data['name']
     hashString = aadhar + name
     UID = {"UID":hashlib.sha256(hashString.encode()).hexdigest()}
