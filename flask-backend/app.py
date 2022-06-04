@@ -35,8 +35,6 @@ def uidGenerate():
 @app.route('/excel/process',methods =['POST'])
 def Excel_Process():
     data = request.get_json(force=True)
-    print(data)
-    print(type(data))
     dataset = data['dataset']
     res = Excel_Processor(dataset)
     return jsonify(res),200
