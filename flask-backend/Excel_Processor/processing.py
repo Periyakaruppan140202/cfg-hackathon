@@ -39,3 +39,13 @@ def Name_Checker(dataset):
   print(name_error)
 
 Name_Checker(dataset)
+
+def Negative_Checker(dataset):
+  negative_errors = []
+  for i in range(len(dataset)):
+    for j in range(3,22):
+      if(type(dataset.iloc[i,j])!=str and dataset.iloc[i,j]<0):
+        negative_errors.append(f"The row is {i+1} and col is {j+1} \n")
+  print(negative_errors)
+
+Negative_Checker(dataset)
