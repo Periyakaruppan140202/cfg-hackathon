@@ -6,8 +6,8 @@ export default function App() {
   const [loading, setIsLoading] = React.useState(false);
   const [errorMsg, setErrMsg] = React.useState(false);
   const [showError, setShowError] = React.useState(false);
-  const [name, setName] = React.useState("");
-  const [centerName, setCenterName] = React.useState("");
+  const [FellowName, setName] = React.useState("");
+  const [CenterName, setCenterName] = React.useState("");
   const [identified, setIdentified] = React.useState("");
   const [enrolled, setEnrolled] = React.useState("");
   const [conducted, setConducted] = React.useState("");
@@ -31,20 +31,16 @@ export default function App() {
 
   async function submitRegister(e) {
     //   console.log(name,email,password, isStudent)
-    e.preventDefault();
-    if (thanks > 5) {
-      alert("Rating has to be less than 5");
-      return;
-    } else if (thanks < 1) {
-      alert("Rating has to be more than 0");
-      return;
-    }
     try {
-      const response2 = await postEndPoint(
-        "/add",
-        {
-          name,
-          centerName,
+      const response = await fetch("http://localhost:5600/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+        body: JSON.stringify({
+          FellowName,
+          CenterName,
           identified,
           enrolled,
           conducted,
@@ -54,6 +50,7 @@ export default function App() {
           math,
           regular,
           exposure,
+          session,
           training,
           events,
           visits,
@@ -64,34 +61,16 @@ export default function App() {
           oneOnOne,
           thanks,
           location,
-        },
-        null
-      );
-      if (response2) {
-        if (response2.status === 200 && response2.data.token) {
-          console.log(response2);
-          alert("Form Successfully Submitted");
-          localStorage.setItem("token", response2.data.token);
-        }
-      } else {
-        setIsLoading(false);
-        setErrMsg("OOPS AN ERROR OCCURED TRY AGAIN LATER!!");
-        setShowError(true);
-      }
-    } catch (err) {
-      alert(err.response.data.message);
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
       setIsLoading(false);
-      if (
-        typeof err.response !== "undefined" &&
-        typeof err.response.data !== "undefined" &&
-        typeof err.response.data.msg !== "undefined"
-      ) {
-        setErrMsg(err.response.data.msg);
-        setShowError(true);
-      } else {
-        setErrMsg("OOPS AN ERROR OCCURED TRY AGAIN LATER!!");
-        setShowError(true);
-      }
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+      setErrMsg(error.message);
+      setShowError(true);
     }
   }
 
@@ -99,7 +78,7 @@ export default function App() {
     <>
       <NavBars />
       <body className="fellow">
-        <form className="fellowForm">
+        <div className="fellowForm">
           <h1>Monthly Review</h1>
 
           <label>
@@ -107,7 +86,7 @@ export default function App() {
             <input
               type="text"
               name="FellowName"
-              value={name}
+              value={FellowName}
               onInput={(event) => {
                 setName(event.target.value);
               }}
@@ -119,7 +98,7 @@ export default function App() {
             <input
               type="text"
               name="CenterName"
-              value={centerName}
+              value={CenterName}
               onInput={(event) => {
                 setCenterName(event.target.value);
               }}
@@ -381,7 +360,7 @@ export default function App() {
           >
             Submit
           </button>
-        </form>
+        </div>
       </body>
     </>
   );

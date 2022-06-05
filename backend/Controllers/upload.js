@@ -1,5 +1,6 @@
 const Fellow = require("../Models/fellow");
 const FileUtils = require("../Utils/upload");
+const axios = require("axios");
 class UploadController {
   async upload(req, res) {
     const file = req.file.path;
@@ -7,6 +8,7 @@ class UploadController {
     const fileUtils = new FileUtils(file, type);
     let data = fileUtils.readExcel();
     console.log(data);
+    const fellows = [];
     try {
       for (let fellow of data) {
         let fellowDoc = new Fellow({
@@ -49,8 +51,9 @@ class UploadController {
           Location: fellow.Location,
         });
         await fellowDoc.save();
+        fellows.push(fellowDoc);
       }
-      console.log(fellowDoc);
+
       res.json({
         msg: "Fellow Sheet Uploaded Successfully",
         err: null,
