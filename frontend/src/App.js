@@ -17,27 +17,25 @@ import MainHome from "./pages/MainHome/MainHome";
 
 function App() {
   return (
-(
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/mainhome/:id" element={<MainHome />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/excel" element={<Excel />} />
-          <Route path="/dataanalysis" element={<MainHome />} />
-          <Route path="/chart" element={<Chart />} />
-          <Route path="/chart3" element={<Chart3 />} />
-          <Route path="/chart2" element={<Chart2 />} />
-          <Route path="/fellow" element={<Fellow />} />
-          <Route path="/form" element={<Form />} />
-          <Route path="/chart4" element={<Chart4 />} />
-          <Route path="/fellowanalysis" element={<FellowAnalysis />} />
-          <Route path="/form" element={<Form />} />
-          <Route path="/upload" element={<Excel />} />
-        </Routes>
-        <Chatbot />
-      </BrowserRouter>
-    )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mainhome/:id" element={<MainHome />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/excel" element={<Excel />} />
+        <Route path="/dataanalysis" element={<MainHome />} />
+        <Route path="/chart" element={<Chart />} />
+        <Route path="/chart3" element={<Chart3 />} />
+        <Route path="/chart2" element={<Chart2 />} />
+        <Route path="/fellow" element={<Fellow />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/chart4" element={<Chart4 />} />
+        <Route path="/fellowanalysis" element={<FellowAnalysis />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/upload" element={<Excel />} />
+      </Routes>
+      <Chatbot />
+    </BrowserRouter>
   );
 }
 
