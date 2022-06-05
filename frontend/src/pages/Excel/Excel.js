@@ -1,17 +1,27 @@
 import React from "react";
 import NavBars from "../../components/NavBars";
 import "./Excel.css";
+import { postEndPoint } from "../../request/request";
 
 const Excel = () => {
-  const onChange = (e) => {
-    let formData = new FormData();
+  const onChange = async (e) => {
     try {
-      formData.append("excelInput", e.target.files[0]);
-      //console.log("10",e.FormData);
-
-      console.log(formData.get("excelInput"));
+      let formData = new FormData();
+      formData.append("excel", e.target.files[0]);
+      const response = await postEndPoint("/uploadExcel", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      if (response) {
+        alert("success");
+      } else {
+        console.log("wrong format");
+      }
     } catch (err) {
-      console.log("No file recieved");
+      if (err.response.status === 401) {
+        console.log("error");
+      } else {
+        console.log(err.response);
+      }
     }
   };
   return (
