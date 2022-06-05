@@ -14,30 +14,30 @@ import Chart3 from "./pages/Chart/chart3";
 import Form from "./pages/Form/Form";
 import FellowAnalysis from "./pages/FellowAnalysis/Analysis";
 import MainHome from "./pages/MainHome/MainHome";
+import Blockchain from "./components/Blockchain";
 
 function App() {
   return (
-(
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/mainhome" element={<MainHome />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/excel" element={<Excel />} />
-          <Route path="/dataanalysis" element={<MainHome />} />
-          <Route path="/chart" element={<Chart />} />
-          <Route path="/chart3" element={<Chart3 />} />
-          <Route path="/chart2" element={<Chart2 />} />
-          <Route path="/fellow" element={<Fellow />} />
-          <Route path="/form" element={<Form />} />
-          <Route path="/chart4" element={<Chart4 />} />
-          <Route path="/fellowanalysis" element={<FellowAnalysis />} />
-          <Route path="/form" element={<Form />} />
-          <Route path="/upload" element={<Excel />} />
-        </Routes>
-        <Chatbot />
-      </BrowserRouter>
-    )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mainhome" element={<MainHome />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/excel" element={<Excel />} />
+        <Route path="/dataanalysis" element={<MainHome />} />
+        <Route path="/chart" element={<Chart />} />
+        <Route path="/chart3" element={<Chart3 />} />
+        <Route path="/chart2" element={<Chart2 />} />
+        <Route path="/fellow" element={<Fellow />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/chart4" element={<Chart4 />} />
+        <Route path="/fellowanalysis" element={<FellowAnalysis />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/upload" element={<Excel />} />
+        <Route path="/blockchain" element={<Blockchain />} />
+      </Routes>
+      <Chatbot />
+    </BrowserRouter>
   );
 }
 
