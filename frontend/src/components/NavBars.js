@@ -11,7 +11,7 @@ const NavBars = () => {
       style={{ backgroundColor: "#F3F2EF" }}
     >
       <p className="p-2"></p>
-      <a className="navbar-brand" href="#">
+      <a className="navbar-brand" href="/">
         <img src={logo} alt="anubhuti" height="40px" />
       </a>
       <button
@@ -38,7 +38,7 @@ const NavBars = () => {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/dataanalysis">
               Data Analysis
             </a>
           </li>

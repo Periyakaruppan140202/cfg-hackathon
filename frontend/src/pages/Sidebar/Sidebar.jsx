@@ -71,51 +71,39 @@ const Sidebar = () => {
       </button> */}
       {show ? (
         <div className="sidebar">
-          <div className="top">
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <span className="Admin_logo">Anubhuti</span>
-            </Link>
-          </div>
-          <hr />
           <div className="center">
             <ul>
-              <Link to="/" style={{ textDecoration: "none" }}>
+              {/* <Link to="/" style={{ textDecoration: "none" }}>
                 <li>
                   <DashboardIcon className="icon" />
                   <span>Dashboard</span>
                 </li>
-              </Link>
-              <Link to="/journalists" style={{ textDecoration: "none" }}>
-                <li>
+              </Link> */}
+              <Link to="/chart" style={{ textDecoration: "none" }}>
+                <li className="yspace">
                   <GroupIcon className="icon" />
                   <span>Chart 1</span>
                 </li>
               </Link>
-              <Link to="/allblogs" style={{ textDecoration: "none" }}>
-                <li>
+              <Link to="/chart2" style={{ textDecoration: "none" }}>
+                <li className="yspace">
                   <CategoryIcon className="icon" />
                   <span>Chart 2</span>
                 </li>
               </Link>
-              <Link to="/statistics" style={{ textDecoration: "none" }}>
-                <li>
+              <Link to="/chart3" style={{ textDecoration: "none" }}>
+                <li className="yspace">
                   <InsertChartOutlinedSharpIcon className="icon" />
                   <span>Chart 3</span>
                 </li>
               </Link>
-              <Link to="/notification" style={{ textDecoration: "none" }}>
-                <li>
+              <Link to="/chart4" style={{ textDecoration: "none" }}>
+                <li className="yspace">
                   <NotificationsNoneOutlinedIcon className="icon" />
                   <span>Chart 4</span>
                 </li>
               </Link>
-              <Link to="/acceptedList" style={{ textDecoration: "none" }}>
-                <li>
-                  <ThumbUpOffAltIcon className="icon" />
-                  <span>Chart 5</span>
-                </li>
-              </Link>
-              <li>
+              <li className="yspace">
                 <WysiwygIcon className="icon" />
                 <span>Map</span>
               </li>

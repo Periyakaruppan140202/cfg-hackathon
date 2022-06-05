@@ -23,7 +23,7 @@ function App() {
         <Route path="/mainhome" element={<MainHome />} />
         <Route path="/login" element={<Login />} />
         <Route path="/excel" element={<Excel />} />
-        {/* <Route path="/MainHome" element={<MainHome />} /> */}
+        <Route path="/dataanalysis" element={<MainHome />} />
         <Route path="/chart" element={<Chart />} />
         <Route path="/chart3" element={<Chart3 />} />
         <Route path="/chart2" element={<Chart2 />} />

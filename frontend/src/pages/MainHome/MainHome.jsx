@@ -7,6 +7,7 @@ import Sidebar from "../Sidebar/Sidebar";
 // import List from "../../components/List/List";
 // import { searchFunc, searchresult } from "../Apicall";
 import "./home.scss";
+import NavBars from "../../components/NavBars";
 
 // import ScatterPlot from "../../components/chart/Chart";
 
@@ -46,12 +47,15 @@ const MainHome = () => {
   // ];
 
   return (
-    <div className="home">
-      <Sidebar />
-      <div className="homeContainer">
-        <Navbar />
+    <>
+      <NavBars />
+      <div className="home">
+        <Sidebar />
+        <div className="homeContainer">
+          <Navbar />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

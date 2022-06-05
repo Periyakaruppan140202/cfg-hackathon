@@ -17,11 +17,15 @@ router.use("/", ChartRoute);
 const users = [
   {
     email: "admin",
-    password: "admin",
+    password: "admin123",
   },
   {
     email: "user",
-    password: "user",
+    password: "user123",
+  },
+  {
+    email: "user1",
+    password: "user123",
   },
 ];
 //Login Route and JWT token generation
@@ -43,6 +47,7 @@ router.post("/login", async (req, res) => {
     // }
     const token = jwt.sign({ user }, "secretkey", { expiresIn: "3d" });
     console.log(token);
+
     res.json({
       token,
     });
