@@ -1,10 +1,16 @@
 import React from "react";
 import NavBars from "../../components/NavBars";
 import { Card, Button, Col, Container, Row } from "react-bootstrap";
+import "./Home.css";
 function Home(props) {
   return (
     <div>
       <NavBars />
+      <div class="jumbotronn p-5 rounded-lg m-3">
+  <h1 class="display-2">Anubhuti Foundation</h1>
+  <p class="lead">The foundation is trying to create an educational environment for underprivileged students by becoming the bridge between schools and community.</p>
+  <hr class="my-4"/>  
+</div>
       <div>
         <Row>
           <Col>
