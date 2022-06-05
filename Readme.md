@@ -4,25 +4,22 @@
  Developing a solution in streamlining the data collection and creating visualizations of the NGO's impact to strethen their pitches to different funders.
 
 ## Features
-
-- 
-- 
-- 
+- Interactive visualization
+- Simple and Robust Interface for new system.
+- Advanced analytics to assess each fellow.
+- Productivity API -> Automatic Excel Data Error Indicator
+- Security -> Blockchain
 
 ## Solutions
 
 ![image](https://user-images.githubusercontent.com/62014647/172034602-e7555302-2dc6-4d69-bcc1-cee97dc51922.png)
 
+## Webapp
 
 
-
-## Design/Architechture
-<Insert image here if u hv any>
 ## TechStacks
-- [React] - JavaScript library for building user interfaces.
-- [node.js] - evented I/O for the backend
-- [Express] - fast node.js network app framework
-- [MongoDb] - a modern database
+![image](https://user-images.githubusercontent.com/62014647/172034797-aff73842-75bb-4af4-bd56-8ef81edf459c.png)
+
 
 ## Installation & Running on local
 
@@ -45,17 +42,18 @@ node app
 ## Contributors
 
 ### _Mentors_
-> Alok Mishra
-> Nawed
+- Alok Mishra
+- Nawed
 
 ### _Developers_
- > Chirag
- > Periyakaruppan
- > Prashant
- > Sara
- > Yuthirshta
- > Deepthi
- > Prerna
+ - Chirag
+ - Periyakaruppan
+ - Prashant
+ - Sara
+ - Yuthirshta
+ - Deepthi
+ - Prerna
+ - Kunal
 
 ## References
 - [node.js]
