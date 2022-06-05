@@ -4,7 +4,7 @@ import hashlib
 from ML.model import predict
 from Excel_Processor.processing import Excel_Processor
 from scripts.json2csv import json2csv
-
+from Blockchain_Model.blockchain import Blockchain
 app = Flask(__name__)
 CORS(app)
 
@@ -38,6 +38,10 @@ def Excel_Process():
     dataset = data['dataset']
     res = Excel_Processor(dataset)
     return jsonify(res),200
+
+
+blockchain = Blockchain(str(datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')))
+
 
 
 if(__name__) == "__main__":
