@@ -1,13 +1,15 @@
 import React from "react";
 import NavBars from "../../components/NavBars";
 import "./Excel.css";
-import { postEndPoint } from "../../request/request";
+import { postEndPoint, getEndPoint } from "../../request/request";
+import axios from "axios";
 
 const Excel = () => {
   const onChange = async (e) => {
     try {
       let formData = new FormData();
       formData.append("excel", e.target.files[0]);
+
       const response = await postEndPoint("/uploadExcel", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });

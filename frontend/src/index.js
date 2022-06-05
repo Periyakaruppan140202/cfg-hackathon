@@ -1,30 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import axios from 'axios'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import axios from "axios";
 
-axios.defaults.baseURL = 'http://localhost:5600/';
+// axios.defaults.baseURL = 'http://localhost:5600/';
 
 // Add a request interceptor
 axios.interceptors.request.use(
-  config => {
+  (config) => {
     // Do something before request is sent
     const tokenConfig = config;
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     if (token) {
       tokenConfig.headers.Authorization = `Bearer ${token}`;
     }
     return tokenConfig;
   },
-  error => {
+  (error) => {
     // Do something with request error
     return Promise.reject(error.data.msg);
   }
 );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
