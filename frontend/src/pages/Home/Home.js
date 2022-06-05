@@ -2,6 +2,8 @@ import React from "react";
 import NavBars from "../../components/NavBars";
 import { Card, Button, Col, Container, Row } from "react-bootstrap";
 import "./Home.css";
+import { Link } from "react-router-dom";
+
 function Home(props) {
   return (
     <div>
@@ -40,14 +42,9 @@ function Home(props) {
                   variety of Interactive visualizations.
                 </Card.Text>
               </Card.Body>
-              <button
-                className="buttonOfHome"
-                onClick={() => {
-                  window.location.replace("http://localhost:3000/dataanalysis");
-                }}
-              >
-                Go somewhere
-              </button>
+              <Link to="dataanalysis">
+                <button className="buttonOfHome">Data Analysis</button>
+              </Link>
             </Card>
           </Col>
           <Col>
@@ -68,7 +65,9 @@ function Home(props) {
                   view of Organization
                 </Card.Text>
               </Card.Body>
-              <button className="buttonOfHome">Go somewhere</button>
+              <Link to="fellow">
+                <button className="buttonOfHome">Fellow Data</button>
+              </Link>
             </Card>
           </Col>
           <Col>
@@ -89,7 +88,9 @@ function Home(props) {
                   And Robust Interface for new systems
                 </Card.Text>
               </Card.Body>
-              <button className="buttonOfHome">Go somewhere</button>
+              <Link to="/form">
+                <button className="buttonOfHome">Add Form</button>
+              </Link>
             </Card>
           </Col>
         </Row>
