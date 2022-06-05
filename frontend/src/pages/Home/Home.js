@@ -2,15 +2,21 @@ import React from "react";
 import NavBars from "../../components/NavBars";
 import { Card, Button, Col, Container, Row } from "react-bootstrap";
 import "./Home.css";
+import { Link } from "react-router-dom";
+
 function Home(props) {
   return (
     <div>
       <NavBars />
       <div class="jumbotronn p-5 rounded-lg m-3">
-  <h1 class="display-2">Anubhuti Foundation</h1>
-  <p class="lead">The foundation is trying to create an educational environment for underprivileged students by becoming the bridge between schools and community.</p>
-  <hr class="my-4"/>  
-</div>
+        <h1 class="display-2">Anubhuti Foundation</h1>
+        <p class="lead">
+          The foundation is trying to create an educational environment for
+          underprivileged students by becoming the bridge between schools and
+          community.
+        </p>
+        <hr class="my-4" />
+      </div>
       <div>
         <div>
           <section
@@ -70,7 +76,9 @@ function Home(props) {
                   variety of Interactive visualizations.
                 </Card.Text>
               </Card.Body>
-              <button className="buttonOfHome">Go somewhere</button>
+              <Link to="dataanalysis">
+                <button className="buttonOfHome">Data Analysis</button>
+              </Link>
             </Card>
           </Col>
           <Col>
@@ -91,7 +99,9 @@ function Home(props) {
                   view of Organization
                 </Card.Text>
               </Card.Body>
-              <button className="buttonOfHome">Go somewhere</button>
+              <Link to="fellow">
+                <button className="buttonOfHome">Fellow Data</button>
+              </Link>
             </Card>
           </Col>
           <Col>
@@ -112,7 +122,9 @@ function Home(props) {
                   And Robust Interface for new systems
                 </Card.Text>
               </Card.Body>
-              <button className="buttonOfHome">Go somewhere</button>
+              <Link to="/form">
+                <button className="buttonOfHome">Add Form</button>
+              </Link>
             </Card>
           </Col>
         </Row>
