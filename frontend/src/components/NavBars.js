@@ -42,6 +42,11 @@ const NavBars = () => {
               Data Analysis
             </a>
           </li>
+          {/* <li class="nav-item">
+            <a class="nav-link" href="/fellowanalysis">
+              Fello Analysis
+            </a>
+          </li> */}
           <li class="nav-item">
             <a class="nav-link" href="/form">
               Add Form

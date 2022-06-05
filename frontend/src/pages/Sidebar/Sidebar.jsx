@@ -51,40 +51,37 @@ const Sidebar = () => {
         <div className="sidebar">
           <div className="center">
             <ul>
-              {/* <Link to="/" style={{ textDecoration: "none" }}>
-                <li>
-                  <DashboardIcon className="icon" />
-                  <span>Dashboard</span>
-                </li>
-              </Link> */}
-              <Link to="/chart" style={{ textDecoration: "none" }}>
+              <li style={{ marginTop: "30px" }}>
+                <span>Select a Graph</span>
+              </li>
+              <Link to="/mainhome/1" style={{ textDecoration: "none" }}>
                 <li className="yspace">
                   <GroupIcon className="icon" />
-                  <span>Chart 1</span>
+                  <span>Monthly</span>
                 </li>
               </Link>
-              <Link to="/chart2" style={{ textDecoration: "none" }}>
+              <Link to="/mainhome/2" style={{ textDecoration: "none" }}>
                 <li className="yspace">
                   <CategoryIcon className="icon" />
-                  <span>Chart 2</span>
+                  <span>Attendance</span>
                 </li>
               </Link>
-              <Link to="/chart3" style={{ textDecoration: "none" }}>
+              <Link to="/mainhome/3" style={{ textDecoration: "none" }}>
                 <li className="yspace">
                   <InsertChartOutlinedSharpIcon className="icon" />
-                  <span>Chart 3</span>
+                  <span>Involvement</span>
                 </li>
               </Link>
-              <Link to="/chart4" style={{ textDecoration: "none" }}>
+              <Link to="/mainhome/4" style={{ textDecoration: "none" }}>
                 <li className="yspace">
                   <NotificationsNoneOutlinedIcon className="icon" />
-                  <span>Chart 4</span>
+                  <span>Recruitment</span>
                 </li>
               </Link>
-              <li className="yspace">
+              {/* <li className="yspace">
                 <WysiwygIcon className="icon" />
                 <span>Map</span>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="bottom"></div>
