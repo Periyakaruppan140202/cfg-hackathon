@@ -36,7 +36,7 @@ const Excel = () => {
 
       <div className="A">
         <img src="/images/excel.jpg" alt="excel" />
-        <input className="inputUpload" type="file" onChange={onChange} />
+        <input className="inputUpload input" type="file" onChange={onChange} />
       </div>
     </>
   );
