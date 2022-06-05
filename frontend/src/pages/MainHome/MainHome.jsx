@@ -6,7 +6,6 @@ import Sidebar from "../Sidebar/Sidebar";
 // import Featured from "../../components/featured/Featured";
 // import List from "../../components/List/List";
 // import { searchFunc, searchresult } from "../Apicall";
-import "./home.scss";
 import NavBars from "../../components/NavBars";
 
 // import ScatterPlot from "../../components/chart/Chart";

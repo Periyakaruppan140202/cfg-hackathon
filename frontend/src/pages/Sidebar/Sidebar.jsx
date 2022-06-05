@@ -41,7 +41,6 @@ const Sidebar = () => {
     setOpen(false);
   };
   const onLogout = () => {
-
     localStorage.clear();
     navigate("/");
     window.location.reload();
@@ -52,57 +51,32 @@ const Sidebar = () => {
         <div className="sidebar">
           <div className="center">
             <ul>
-<<<<<<< HEAD
               {/* <Link to="/" style={{ textDecoration: "none" }}>
-=======
-              <Link to="/mainhome/0" style={{ textDecoration: "none" }}>
->>>>>>> 42bc21b8cdb150c40117dc9c4172957cd6dfb544
                 <li>
                   <DashboardIcon className="icon" />
                   <span>Dashboard</span>
                 </li>
-<<<<<<< HEAD
               </Link> */}
               <Link to="/chart" style={{ textDecoration: "none" }}>
                 <li className="yspace">
-=======
-              </Link>
-              <Link to="/mainhome/1" style={{ textDecoration: "none" }}>
-                <li>
->>>>>>> 42bc21b8cdb150c40117dc9c4172957cd6dfb544
                   <GroupIcon className="icon" />
                   <span>Chart 1</span>
                 </li>
               </Link>
-<<<<<<< HEAD
               <Link to="/chart2" style={{ textDecoration: "none" }}>
                 <li className="yspace">
-=======
-              <Link to="/mainhome/2" style={{ textDecoration: "none" }}>
-                <li>
->>>>>>> 42bc21b8cdb150c40117dc9c4172957cd6dfb544
                   <CategoryIcon className="icon" />
                   <span>Chart 2</span>
                 </li>
               </Link>
-<<<<<<< HEAD
               <Link to="/chart3" style={{ textDecoration: "none" }}>
                 <li className="yspace">
-=======
-              <Link to="/mainhome/3" style={{ textDecoration: "none" }}>
-                <li>
->>>>>>> 42bc21b8cdb150c40117dc9c4172957cd6dfb544
                   <InsertChartOutlinedSharpIcon className="icon" />
                   <span>Chart 3</span>
                 </li>
               </Link>
-<<<<<<< HEAD
               <Link to="/chart4" style={{ textDecoration: "none" }}>
                 <li className="yspace">
-=======
-              <Link to="/mainhome/4" style={{ textDecoration: "none" }}>
-                <li>
->>>>>>> 42bc21b8cdb150c40117dc9c4172957cd6dfb544
                   <NotificationsNoneOutlinedIcon className="icon" />
                   <span>Chart 4</span>
                 </li>
