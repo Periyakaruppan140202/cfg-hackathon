@@ -14,7 +14,6 @@ import Chart3 from "./pages/Chart/chart3";
 import Form from "./pages/Form/Form";
 import FellowAnalysis from "./pages/FellowAnalysis/Analysis";
 import MainHome from "./pages/MainHome/MainHome";
-import Blockchain from "./components/Blockchain";
 
 function App() {
   return (
@@ -34,7 +33,6 @@ function App() {
         <Route path="/fellowanalysis" element={<FellowAnalysis />} />
         <Route path="/form" element={<Form />} />
         <Route path="/upload" element={<Excel />} />
-        <Route path="/blockchain" element={<Blockchain />} />
       </Routes>
       <Chatbot />
     </BrowserRouter>

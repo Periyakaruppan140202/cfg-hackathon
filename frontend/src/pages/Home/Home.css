@@ -2,10 +2,24 @@
   margin: auto;
   text-align: center;
 }
-.card-body {
-  height: 50px !important;
-}
 
 .button {
   background-color: #880085 !important;
+}
+.jumbotronn{
+  color: #f8f8f8;
+  font-style: bold;
+  background: #f8f8f8;
+  min-height: 450px;
+  background-image: url("https://images.unsplash.com/photo-1462536943532-57a629f6cc60?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1173&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-blend-mode: darken;
+  padding: 110px 0;
+  margin-bottom: 50px;
+}
+.lead{
+  font-size: x-large;
 }
