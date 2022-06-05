@@ -1,0 +1,11 @@
+.col {
+  margin: auto;
+  text-align: center;
+}
+.card-body {
+  height: 50px !important;
+}
+
+.button {
+  background-color: #880085 !important;
+}

@@ -5,6 +5,7 @@ from ML.model import predict
 from Excel_Processor.processing import Excel_Processor
 from scripts.json2csv import json2csv
 from Blockchain_Model.blockchain import Blockchain
+import datetime,time
 app = Flask(__name__)
 CORS(app)
 
@@ -42,7 +43,17 @@ def Excel_Process():
 
 blockchain = Blockchain(str(datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')))
 
+@app.route('/addblock',methods=['POST','GET'])
+def addBlock():
+    data = request.form.get('data')
+    timestamp = str(datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S'))
+    blockchain.addBlock(data,timestamp)
 
+    return jsonify(blockchain.getLastBlock()),200
+
+@app.route('/viewchain')
+def viewChain():
+    return jsonify(blockchain.viewChain()),200
 
 if(__name__) == "__main__":
     app.run(debug=True)

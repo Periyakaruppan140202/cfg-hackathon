@@ -13,7 +13,7 @@ import Chart4 from "./pages/Chart/chart4";
 import Chart3 from "./pages/Chart/chart3";
 import Form from "./pages/Form/Form";
 import FellowAnalysis from "./pages/FellowAnalysis/Analysis";
-import MainHome from "./pages/MainHome/MainHome";
+// import MainHome from "./pages/MainHome/MainHome";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/mainhome/:id" element={<MainHome />} />
+        {/* <Route path="/mainhome" element={<MainHome />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/excel" element={<Excel />} />
         {/* <Route path="/MainHome" element={<MainHome />} /> */}
