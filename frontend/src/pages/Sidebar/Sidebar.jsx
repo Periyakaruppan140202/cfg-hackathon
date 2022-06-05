@@ -22,9 +22,7 @@ import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-// import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import { getSetToken, getUserInfo } from "../../redux/action/userAction";
 import { useState } from "react";
 
 const Sidebar = () => {
@@ -43,32 +41,13 @@ const Sidebar = () => {
     setOpen(false);
   };
   const onLogout = () => {
-    // dispatch(getSetToken(""));
-    // dispatch(getUserInfo({}));
+
     localStorage.clear();
     navigate("/");
     window.location.reload();
   };
   return (
     <>
-      {/* <button
-        style={{
-          height: "50px",
-          width: "20px",
-          background: "white",
-          border: "none",
-          position: "absolute",
-          outline: "none",
-          background: "transparent",
-          color: "blueviolet",
-          zIndex: "+20",
-        }}
-        onClick={() => {
-          show ? setShow(false) : setShow(true);
-        }}
-      >
-        <MenuIcon />
-      </button> */}
       {show ? (
         <div className="sidebar">
           <div className="top">
@@ -79,31 +58,31 @@ const Sidebar = () => {
           <hr />
           <div className="center">
             <ul>
-              <Link to="/" style={{ textDecoration: "none" }}>
+              <Link to="/mainhome/0" style={{ textDecoration: "none" }}>
                 <li>
                   <DashboardIcon className="icon" />
                   <span>Dashboard</span>
                 </li>
               </Link>
-              <Link to="/journalists" style={{ textDecoration: "none" }}>
+              <Link to="/mainhome/1" style={{ textDecoration: "none" }}>
                 <li>
                   <GroupIcon className="icon" />
                   <span>Chart 1</span>
                 </li>
               </Link>
-              <Link to="/allblogs" style={{ textDecoration: "none" }}>
+              <Link to="/mainhome/2" style={{ textDecoration: "none" }}>
                 <li>
                   <CategoryIcon className="icon" />
                   <span>Chart 2</span>
                 </li>
               </Link>
-              <Link to="/statistics" style={{ textDecoration: "none" }}>
+              <Link to="/mainhome/3" style={{ textDecoration: "none" }}>
                 <li>
                   <InsertChartOutlinedSharpIcon className="icon" />
                   <span>Chart 3</span>
                 </li>
               </Link>
-              <Link to="/notification" style={{ textDecoration: "none" }}>
+              <Link to="/mainhome/4" style={{ textDecoration: "none" }}>
                 <li>
                   <NotificationsNoneOutlinedIcon className="icon" />
                   <span>Chart 4</span>
@@ -119,49 +98,6 @@ const Sidebar = () => {
                 <WysiwygIcon className="icon" />
                 <span>Map</span>
               </li>
-              {/* <li>
-                <VpnKeyIcon className="icon" />
-                <span>Logs</span>
-              </li>
-              <li>
-                <SettingsIcon className="icon" />
-                <span>Settings</span>
-              </li>
-              <Link to="/adminprofile" style={{ textDecoration: "none" }}>
-                <li>
-                  <AccountCircleOutlinedIcon className="icon" />
-                  <span>Profile</span>
-                </li>
-              </Link> */}
-              {/* <li>
-                <LogoutOutlinedIcon className="icon" />
-                <div>
-                  <span onClick={handleClickOpen}>Log out</span>
-                  <Dialog
-                    fullScreen={fullScreen}
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="responsive-dialog-title"
-                  >
-                    <DialogTitle id="responsive-dialog-title">
-                      {"Logout"}
-                    </DialogTitle>
-                    <DialogContent>
-                      <DialogContentText>
-                        Are you sure that you want to Exit from the Panel?
-                      </DialogContentText>
-                    </DialogContent>
-                    <DialogActions>
-                      <Button autoFocus onClick={handleClose}>
-                        No
-                      </Button>
-                      <Button onClick={onLogout} autoFocus>
-                        Yes
-                      </Button>
-                    </DialogActions>
-                  </Dialog>
-                </div>
-              </li> */}
             </ul>
           </div>
           <div className="bottom"></div>
