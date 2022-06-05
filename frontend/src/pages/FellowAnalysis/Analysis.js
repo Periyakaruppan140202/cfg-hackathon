@@ -226,61 +226,59 @@ function Analysis(props) {
         <h1 className="heading">Detail Analysis For Amisha, Rajput</h1>
         <div>
           <div>
-            <Container>
-              <Row>
-                <Col>
-                  {" "}
-                  <Card
-                    className="shadow p-2   mt-4 bg-white rounded"
-                    style={{
-                      width: "18rem",
-                      textAlign: "center",
-                    }}
-                  >
-                    <Card.Body>
-                      <Card.Title>34</Card.Title>
-                      <Card.Text>Successfull Events</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <Col>
-                  {" "}
-                  <Card
-                    className="shadow p-2 mt-4 bg-white rounded"
-                    style={{ width: "18rem", textAlign: "center" }}
-                  >
-                    <Card.Body>
-                      <Card.Title>200</Card.Title>
-                      <Card.Text>No. Of children bridged</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <Col>
-                  {" "}
-                  <Card
-                    className="shadow p-2 mt-4 bg-white rounded"
-                    style={{ width: "18rem", textAlign: "center" }}
-                  >
-                    <Card.Body>
-                      <Card.Title>HIGH</Card.Title>
-                      <Card.Text>Retention Rate</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                <Col>
-                  {" "}
-                  <Card
-                    className="shadow p-2 mt-4 bg-white rounded"
-                    style={{ width: "18rem", textAlign: "center" }}
-                  >
-                    <Card.Body>
-                      <Card.Title>GOOD</Card.Title>
-                      <Card.Text>Communication Skills</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              </Row>
-            </Container>
+            <Row>
+              <Col>
+                {" "}
+                <Card
+                  className="shadow p-2   mt-4 bg-white rounded"
+                  style={{
+                    width: "18rem",
+                    textAlign: "center",
+                  }}
+                >
+                  <Card.Body>
+                    <Card.Title>34</Card.Title>
+                    <Card.Text>Successfull Events</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                {" "}
+                <Card
+                  className="shadow p-2 mt-4 bg-white rounded"
+                  style={{ width: "18rem", textAlign: "center" }}
+                >
+                  <Card.Body>
+                    <Card.Title>200</Card.Title>
+                    <Card.Text>No. Of children bridged</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                {" "}
+                <Card
+                  className="shadow p-2 mt-4 bg-white rounded"
+                  style={{ width: "18rem", textAlign: "center" }}
+                >
+                  <Card.Body>
+                    <Card.Title>HIGH</Card.Title>
+                    <Card.Text>Retention Rate</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                {" "}
+                <Card
+                  className="shadow p-2 mt-4 bg-white rounded"
+                  style={{ width: "18rem", textAlign: "center" }}
+                >
+                  <Card.Body>
+                    <Card.Title>GOOD</Card.Title>
+                    <Card.Text>Communication Skills</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
           </div>
         </div>
         <div className="chartDiv">

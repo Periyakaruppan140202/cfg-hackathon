@@ -9,6 +9,13 @@
 - 
 - 
 
+## Solutions
+
+![image](https://user-images.githubusercontent.com/62014647/172034602-e7555302-2dc6-4d69-bcc1-cee97dc51922.png)
+
+
+
+
 ## Design/Architechture
 <Insert image here if u hv any>
 ## TechStacks
@@ -28,6 +35,11 @@ cd <folder>
 npm i
 node app
 ```
+## Future Scope
+ ![image](https://user-images.githubusercontent.com/62014647/172034633-e0b1eb35-db18-43fc-a8fe-7b5499e5a65a.png)
+
+ 
+ 
 ## FAQs
 
 ## Contributors
