@@ -21,7 +21,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/mainhome/:id" element={<MainHome />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/excel" element={<Excel />} />
         <Route path="/dataanalysis" element={<MainHome />} />
         <Route path="/mainhome/1" element={<Chart />} />
@@ -33,6 +32,8 @@ function App() {
         <Route path="/fellowanalysis" element={<FellowAnalysis />} />
         <Route path="/form" element={<Form />} />
         <Route path="/upload" element={<Excel />} />
+        <Route path="/upload" element={<Excel />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Chatbot />
     </BrowserRouter>

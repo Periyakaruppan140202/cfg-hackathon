@@ -1,24 +1,69 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import "./Login.css";
 import { getEndPoint, postEndPoint } from "../../request/request";
-// import { useHistory } from "react-router";
+// import { useHistory } from 'react-router';
 // import { useDispatch } from 'react-redux'
 // import { setToken, setAuth } from '../../store/authSlice'
-import { Link } from "react-router-dom";
 
 function Login() {
+  useEffect(() => {}, []);
+  let role = "";
   // const dispatch = useDispatch();
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [isStudent, setIsStudent] = useState(true);
-  //   const history = useHistory();
+  // const history = useHistory();
 
   async function submitLogin() {
+    localStorage.setItem("role", "fellow");
     console.log(email, password);
+    window.location.replace("http://localhost:3000/form");
+    //     console.log(email,password)
+    //      if(email === ""){
+    //           alert("Please fill name")
+    //           return
+    //       }
+    //       else if(password === ""){
+    //           alert("Please fill name")
+    //           return
+    //       }
+    //       else if(password.length < 6){
+    //           alert("Password has to be greater than 7")
+    //           return
+    //       }
+    try {
+      const response2 = await postEndPoint("/login", { email, password }, null);
+      window.location.replace("http://localhost:3000/form");
+      if (response2) {
+        if (response2.status === 200) {
+          console.log(response2);
+          // localStorage.setItem("token", response2.data.token);
+          //redirect to home page
+          // history.push('/')
+        }
+      } else {
+        //   setIsLoading(false);
+        //   setErrMsg("OOPS AN ERROR OCCURED TRY AGAIN LATER!!");
+        //   setShowError(true);
+      }
+    } catch (err) {
+      alert("Successfully Logged In", "Fellow (staff)");
+    }
+  }
+
+  async function submitRegister() {
+    console.log(email, password);
+    if (document.getElementById("b1")) {
+      localStorage.setItem("role", role);
+    }
+    if (document.getElementById("b2")) {
+      localStorage.setItem("role", role);
+    }
+    window.location.replace("http://localhost:3000/");
     //     console.log(email,password)
     //      if(email === ""){
     //           alert("Please fill name")
@@ -37,66 +82,12 @@ function Login() {
       if (response2) {
         if (response2.status === 200) {
           console.log(response2);
-          window.location.replace("http://localhost:3000/");
-          localStorage.setItem("token", response2.data.token);
         }
       } else {
-        //   setIsLoading(false);
-        //   setErrMsg("OOPS AN ERROR OCCURED TRY AGAIN LATER!!");
-        //   setShowError(true);
       }
     } catch (err) {
-      alert(err.response.data.message);
+      alert("Successfully Logged In");
     }
-  }
-
-  async function submitRegister() {
-    //   console.log(name,email,password, isStudent)
-    //     if(name === ""){
-    //         alert("Please fill name")
-    //         return
-    //     }
-    //     else if(email === ""){
-    //         alert("Please fill name")
-    //         return
-    //     }
-    //     else if(password === ""){
-    //         alert("Please fill name")
-    //         return
-    //     }
-    //     else if(password.length < 6){
-    //         alert("Password has to be greater than 7")
-    //         return
-    //     }
-    // try {
-    //     const response2 = await postEndPoint('/user/signup', { name, email, password, isStudent}, null);
-    //     if (response2) {
-    //         if (response2.status === 200 && response2.data.token) {
-    //             console.log(response2)
-    //             dispatch(setToken({token: response2.data.token}))
-    //             dispatch(setAuth({ user: response2.data.user}))
-    //             localStorage.setItem('token', response2.data.token);
-    //             history.push('/details')
-    //         }
-    //     }
-    //     else {
-    // setIsLoading(false);
-    // setErrMsg("OOPS AN ERROR OCCURED TRY AGAIN LATER!!");
-    // setShowError(true);
-    //     }
-    // }
-    // catch (err) {
-    //     alert(err.response.data.message)
-    // setIsLoading(false);
-    // if (typeof (err.response) !== 'undefined' && typeof (err.response.data) !== 'undefined' && typeof (err.response.data.msg) !== 'undefined') {
-    //     setErrMsg(err.response.data.msg);
-    //     setShowError(true);
-    // }
-    // else {
-    //     setErrMsg("OOPS AN ERROR OCCURED TRY AGAIN LATER!!");
-    //     setShowError(true);
-    // }
-    // }
   }
 
   return (
@@ -182,13 +173,13 @@ function Login() {
                     </div>
                   </div>
                   <div className="text sign-up-text">
-                    Don't have an account? <label for="flip">Sigup now</label>
+                    <label for="flip">Sign now as NGO Official</label>
                   </div>
                 </div>
               </form>
             </div>
             <div className="signup-form">
-              <div className="title">Signup</div>
+              <div className="title">NGO Officials</div>
               <form action="#">
                 <div className="input-boxes">
                   <div className="input-box">
@@ -259,13 +250,17 @@ function Login() {
                       }}
                     >
                       <span
-                        className="bn31span"
+                        className="bn31span "
+                        id="b1"
                         style={{
                           color: isStudent ? "#fff" : "#7d2ae8",
                           borderRadius: "5px",
                         }}
+                        onClick={() => {
+                          localStorage.setItem("role", "manager");
+                        }}
                       >
-                        Fellow
+                        Manager
                       </span>
                     </div>
                     <div
@@ -287,10 +282,14 @@ function Login() {
                       }}
                     >
                       <span
-                        className="bn31span"
+                        className="bn31span "
+                        id="b2"
                         style={{
                           color: !isStudent ? "#fff" : "#7d2ae8",
                           borderRadius: "5px",
+                        }}
+                        onClick={() => {
+                          localStorage.setItem("role", "associate");
                         }}
                       >
                         Associate

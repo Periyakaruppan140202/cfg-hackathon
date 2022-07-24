@@ -223,7 +223,7 @@ function Analysis(props) {
     <div>
       <NavBars />{" "}
       <div>
-        <h1 className="heading">Detail Analysis For Amisha, Rajput</h1>
+        <h1 className="heading">Detail Analysis For Priyanka, Na</h1>
         <div>
           <div>
             <Row>

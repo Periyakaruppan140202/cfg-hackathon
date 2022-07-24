@@ -17,7 +17,7 @@ router.use("/", ChartRoute);
 const users = [
   {
     email: "admin",
-    password: "admin123",
+    password: "admin",
   },
   {
     email: "user",

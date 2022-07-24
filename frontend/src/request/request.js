@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 
 export async function getEndPoint(req, config) {
   // get request
 
-  const response = await axios.get(req, config).catch(error => {
+  const response = await axios.get(req, config).catch((error) => {
     return Promise.reject(error);
   });
 
@@ -16,7 +16,7 @@ export async function getEndPoint(req, config) {
 
 export async function postEndPoint(req, formData, config) {
   // post request
-  const response = await axios.post(req, formData, config).catch(error => {
+  const response = await axios.post(req, formData, config).catch((error) => {
     return Promise.reject(error);
   });
   // Return empty array to avoid mapping error
@@ -26,10 +26,9 @@ export async function postEndPoint(req, formData, config) {
   return [];
 }
 
-
 export async function deleteEndPoint(req, formData, config) {
   // post request
-  const response = await axios.delete(req, formData, config).catch(error => {
+  const response = await axios.delete(req, formData, config).catch((error) => {
     return Promise.reject(error);
   });
   // Return empty array to avoid mapping error

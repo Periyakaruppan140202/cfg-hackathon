@@ -34,12 +34,20 @@ const NavBars = () => {
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/fellow">
-              Fellow
+              {localStorage.getItem("role") == "associate" ||
+              localStorage.getItem("role") == "manager" ||
+              localStorage.getItem("role") == ""
+                ? "Fellow"
+                : ""}
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/dataanalysis">
-              Data Analysis
+              {localStorage.getItem("role") == "associate" ||
+              localStorage.getItem("role") == "manager" ||
+              localStorage.getItem("role") == ""
+                ? "Data Analysis"
+                : ""}
             </a>
           </li>
           {/* <li class="nav-item">
@@ -55,6 +63,28 @@ const NavBars = () => {
           <li class="nav-item">
             <a class="nav-link" href="/upload">
               Upload Excel Sheet
+            </a>
+          </li>
+          <li class="nav-item" style={{ float: "right" }}>
+            <a class="nav-link" href="/upload">
+              {localStorage.getItem("role") !== null ? (
+                <span
+                  onClick={() => {
+                    localStorage.setItem("role", "manager");
+                    window.location.replace("http://localhost:3000/login");
+                  }}
+                >
+                  Logout
+                </span>
+              ) : (
+                <span
+                  onClick={() => {
+                    window.location.replace("http://localhost:3000/login");
+                  }}
+                >
+                  LogIn
+                </span>
+              )}
             </a>
           </li>
         </ul>
